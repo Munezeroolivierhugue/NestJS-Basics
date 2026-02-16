@@ -25,4 +25,8 @@ export class UsersService {
     updateUser(id: number, body: any){
         return JSON.stringify(this.users.map(user => user.id == id ? body : user));
     }
+
+    deleteUser(id: number){
+        return `User Deleted Successfully ${JSON.stringify(this.users.filter(user => user.id != id))}`
+    }
 }
